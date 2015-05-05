@@ -1,33 +1,47 @@
-// PINS
-#define red 9 // red LED
-#define yellow 10 // yellow LED
-#define green 11 // green LED
+/* 
+P1_Sygnalizacja_Swietlna.ino 
+  by Mateusz Jaros\ The JarOS 
+    01.03.2015
+
+polaczenie:
+  dioda czerwona poprzez rezystor do pinu 9 
+  didoa żóta przez rezystor do pinu 10
+  dioda zielona przez rezystor do pinu 11.
+  
+  
+  Program zapala i gasi diody tak jak to jest w sygnalizacji swietlnej.
+
+*/
+// PINY
+#define red 9 // czerwony LED
+#define yellow 10 // zolty LED
+#define green 11 // zielony LED
 
 void setup() {
-  //set pins as output
+  //ustawianie pinow jako wyjscie
   pinMode(red, OUTPUT);
   pinMode(yellow, OUTPUT);
   pinMode(green, OUTPUT);
   
-  // turn off all LEDs
+  // wylaczanie wszystkich LEDow
   digitalWrite(red, LOW);
   digitalWrite(yellow, LOW);
   digitalWrite(green, LOW);
 }
 
 void loop() {
-  // turn on green LED and wait 10 seconds
+  //zapalanie zielonego LEDa i czekanie 10 sekund 
   digitalWrite(green, HIGH);
   delay(10000);
   digitalWrite(green, LOW);
-  // turn on yellow LED for 7 seconds
+  // zapalanie zoltego LEDa na 7 sekund 
   digitalWrite(yellow, HIGH);
   delay(7000);
   digitalWrite(yellow, LOW);
-  // turn on red LED and wait 10 seconds
+  // zapalnie czerownego LEDa i czekanie 10 sekund
   digitalWrite(red, HIGH);
   delay(10000);
-  // blink yellow LED 3 times 
+  // migniecie 3x zoltym LEDem po 0.7 sekundy
   digitalWrite(yellow, HIGH);
   delay(700);
   digitalWrite(yellow, LOW);
@@ -39,6 +53,6 @@ void loop() {
   digitalWrite(yellow, HIGH);
   delay(700);
   digitalWrite(yellow, LOW);
-  // turn off red LED
+  //zgaszenie czerwonej diody
   digitalWrite(red, LOW);
 }
